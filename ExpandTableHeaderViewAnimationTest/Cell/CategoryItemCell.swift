@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryItemCell: UITableViewCell {
+class CategoryItemCell: UICollectionViewCell {
     
     static let Identifier = "CategoryItemCell"
     
@@ -18,8 +18,8 @@ class CategoryItemCell: UITableViewCell {
         return label
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     
@@ -34,7 +34,8 @@ class CategoryItemCell: UITableViewCell {
     func setupView() {
         self.contentView.addSubview(self.label)
         self.label.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15))
+            $0.left.equalToSuperview().offset(15)
+            $0.centerY.equalToSuperview()
         }
     }
     

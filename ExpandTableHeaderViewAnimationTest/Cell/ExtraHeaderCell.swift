@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ExtraHeaderCell: UITableViewCell {
+class ExtraHeaderCell: UICollectionViewCell {
     
     static let Identifier = "ExtraHeaderCell"
     
@@ -26,8 +26,8 @@ class ExtraHeaderCell: UITableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     
@@ -40,8 +40,8 @@ class ExtraHeaderCell: UITableViewCell {
     }
     
     func setupView() {
-        self.contentView.addSubview(self.label)
-        self.contentView.addSubview(self.colorView)
+        self.addSubview(self.label)
+        self.addSubview(self.colorView)
         
         self.label.snp.makeConstraints {
             $0.top.equalToSuperview().offset(15)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryHeaderView: UITableViewHeaderFooterView {
+class CategoryHeaderView: UICollectionReusableView {
     
     static let Identifier = "CategoryHeaderView"
     
@@ -27,13 +27,10 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
         return view
     }()
     
-    let openBackgroundColor: UIColor? = UIColor.darkGray
-    let closeBackgroundColor: UIColor? = nil
-    
     var didTapCellHandler: (() -> ())?
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     
@@ -43,26 +40,20 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
     
     func setup() {
         setupView()
-        self.contentView.isUserInteractionEnabled = true
-        self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapAction)))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapAction)))
     }
     
     func setupView() {
-        self.contentView.addSubview(self.wrapperView)
+        self.addSubview(self.wrapperView)
         self.wrapperView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.height.equalTo(50)
         }
     }
     
-    func set(name: String, isOpen: Bool, didTapCellHandler: @escaping ()->()) {
+    func set(name: String, didTapCellHandler: @escaping ()->()) {
         self.label.text = name
         self.didTapCellHandler = didTapCellHandler
-        set(isOpen: isOpen)
-    }
-    
-    func set(isOpen: Bool) {
-        self.contentView.backgroundColor = isOpen ? openBackgroundColor : closeBackgroundColor
     }
     
     @objc func didTapAction() {

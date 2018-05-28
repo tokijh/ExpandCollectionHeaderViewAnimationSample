@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryFooterView: UITableViewHeaderFooterView {
+class CategoryFooterView: UICollectionReusableView {
     
     static let Identifier = "CategoryFooterView"
     
@@ -21,8 +21,8 @@ class CategoryFooterView: UITableViewHeaderFooterView {
     let openBackgroundColor: UIColor = UIColor.darkGray
     let closeBackgroundColor: UIColor = UIColor.white
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
     
@@ -35,7 +35,7 @@ class CategoryFooterView: UITableViewHeaderFooterView {
     }
     
     func setupView() {
-        self.contentView.addSubview(self.borderView)
+        self.addSubview(self.borderView)
         self.borderView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
