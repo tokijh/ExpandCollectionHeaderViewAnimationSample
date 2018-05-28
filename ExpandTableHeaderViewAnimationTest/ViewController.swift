@@ -48,7 +48,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard section != 0 else { return 0 }
+        guard section != 0 else { return 1 }
         return showingCategories[section - 1].count
     }
     
@@ -68,11 +68,24 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 { return tableView.dequeueReusableHeaderFooterView(withIdentifier: ExtraHeaderCell.Identifier) }
         guard let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: CategoryHeaderView.Identifier) as? CategoryHeaderView else { return nil }
         let category = self.categories[section - 1]
         let isOpen = self.openStatus[section - 1]
-        cell.set(name: category.name, isOpen: isOpen)
+        cell.set(name: category.name, isOpen: isOpen) { [weak self, weak cell] in
+            guard let strongSelf = self else { return }
+            let valueSection = section - 1
+            let newOpenStatus = !strongSelf.openStatus[valueSection]
+            strongSelf.openStatus[valueSection] = newOpenStatus
+            let categories = strongSelf.categories[valueSection]
+            
+            let indexPaths = Array(0..<categories.subCategories.count).map({ IndexPath(row: $0, section: section) })
+            if newOpenStatus {
+                strongSelf.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.fade)
+            } else {
+                strongSelf.tableView.deleteRows(at: indexPaths, with: UITableViewRowAnimation.fade)
+            }
+            cell?.set(isOpen: newOpenStatus)
+        }
         return cell
     }
     
@@ -82,12 +95,12 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 { return 250 }
+        if section == 0 { return 0 }
         return 50
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 0 { return 0 }
-        return 30
+        return 1
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ExtraHeaderCell: UITableViewCell {
     
@@ -42,13 +43,17 @@ class ExtraHeaderCell: UITableViewCell {
         self.contentView.addSubview(self.label)
         self.contentView.addSubview(self.colorView)
         
-        self.label.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
-        self.label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 15).isActive = true
-        self.label.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -15).isActive = true
-        self.colorView.topAnchor.constraint(equalTo: self.label.bottomAnchor, constant: 15).isActive = true
-        self.colorView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 15).isActive = true
-        self.colorView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -15).isActive = true
-        self.colorView.bottomAnchor.constraint(greaterThanOrEqualTo: self.contentView.bottomAnchor, constant: -15).isActive = true
-        self.colorView.heightAnchor.constraint(equalToConstant: 100)
+        self.label.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(15)
+            $0.left.equalToSuperview().offset(15)
+            $0.right.equalToSuperview().offset(-15)
+        }
+        self.colorView.snp.makeConstraints {
+            $0.top.equalTo(label).offset(15)
+            $0.left.equalToSuperview().offset(15)
+            $0.right.equalToSuperview().offset(-15)
+            $0.bottom.equalToSuperview().offset(-15)
+            $0.height.equalTo(100)
+        }
     }
 }

@@ -36,9 +36,8 @@ class CategoryFooterView: UITableViewHeaderFooterView {
     
     func setupView() {
         self.contentView.addSubview(self.borderView)
-        self.borderView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0).isActive = true
-        self.borderView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0).isActive = true
-        self.borderView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0).isActive = true
-        self.borderView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0).isActive = true
+        self.borderView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

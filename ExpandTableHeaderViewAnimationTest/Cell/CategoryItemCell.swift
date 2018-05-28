@@ -33,10 +33,9 @@ class CategoryItemCell: UITableViewCell {
     
     func setupView() {
         self.contentView.addSubview(self.label)
-        self.label.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
-        self.label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 15).isActive = true
-        self.label.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -15).isActive = true
-        self.label.bottomAnchor.constraint(greaterThanOrEqualTo: self.contentView.bottomAnchor, constant: -15).isActive = true
+        self.label.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15))
+        }
     }
     
     func set(name: String) {

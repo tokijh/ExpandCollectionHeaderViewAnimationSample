@@ -20,13 +20,17 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
     lazy var wrapperView: UIView = { [unowned self] in
         let view = UIView()
         view.addSubview(label)
-        label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15)
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.label.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(15)
+            $0.centerY.equalToSuperview()
+        }
         return view
     }()
     
-    let openBackgroundColor: UIColor = UIColor.darkGray
-    let closeBackgroundColor: UIColor = UIColor.white
+    let openBackgroundColor: UIColor? = UIColor.darkGray
+    let closeBackgroundColor: UIColor? = nil
+    
+    var didTapCellHandler: (() -> ())?
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -39,23 +43,29 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
     
     func setup() {
         setupView()
+        self.contentView.isUserInteractionEnabled = true
+        self.contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapAction)))
     }
     
     func setupView() {
         self.contentView.addSubview(self.wrapperView)
-        self.wrapperView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0).isActive = true
-        self.wrapperView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0).isActive = true
-        self.wrapperView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0).isActive = true
-        self.wrapperView.bottomAnchor.constraint(greaterThanOrEqualTo: self.contentView.bottomAnchor, constant: 0).isActive = true
-        self.wrapperView.heightAnchor.constraint(equalToConstant: 50)
+        self.wrapperView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.height.equalTo(50)
+        }
     }
     
-    func set(name: String, isOpen: Bool) {
+    func set(name: String, isOpen: Bool, didTapCellHandler: @escaping ()->()) {
         self.label.text = name
+        self.didTapCellHandler = didTapCellHandler
         set(isOpen: isOpen)
     }
     
     func set(isOpen: Bool) {
         self.contentView.backgroundColor = isOpen ? openBackgroundColor : closeBackgroundColor
+    }
+    
+    @objc func didTapAction() {
+        self.didTapCellHandler?()
     }
 }
