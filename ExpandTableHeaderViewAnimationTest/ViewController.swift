@@ -31,8 +31,10 @@ class ViewController: UIViewController {
         self.collectionView.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.Identifier)
         self.collectionView.register(CategoryFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: CategoryFooterView.Identifier)
         
+        self.collectionView.contentInset = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionView.alwaysBounceVertical = true
     }
     
     func loadData() {
@@ -79,6 +81,33 @@ extension ViewController: UICollectionViewDataSource {
                         strongSelf.collectionView.insertItems(at: indexPaths)
                     }, completion: nil)
                 } else {
+                    let indexsHeight = indexPaths.map({ strongSelf.collectionView(strongSelf.collectionView, layout: strongSelf.collectionView.collectionViewLayout, sizeForItemAt: $0) }).map({ $0.height }).reduce(0, +)
+                    let value = Array(0..<strongSelf.collectionView.numberOfSections)
+                        .map({ section -> CGFloat in
+                            let rowHeight = Array(0..<strongSelf.collectionView.numberOfItems(inSection: section))
+                                .map({ row -> CGFloat in
+                                    return strongSelf.collectionView(strongSelf.collectionView, layout: strongSelf.collectionView.collectionViewLayout, sizeForItemAt: IndexPath(row: row, section: section)).height
+                                })
+                                .reduce(0, +)
+                            let headerHeight = strongSelf.collectionView(strongSelf.collectionView, layout: strongSelf.collectionView.collectionViewLayout, referenceSizeForHeaderInSection: section).height
+                            let footerHeight = strongSelf.collectionView(strongSelf.collectionView, layout: strongSelf.collectionView.collectionViewLayout, referenceSizeForFooterInSection: section).height
+                            return rowHeight + headerHeight + footerHeight
+                        })
+                        .reduce(0, +)
+                    
+                    let finalHeight = value - indexsHeight
+
+                    let contentInset: UIEdgeInsets
+                    if #available(iOS 11.0, *) {
+                        contentInset = strongSelf.collectionView.adjustedContentInset
+                    } else {
+                        contentInset = strongSelf.collectionView.contentInset
+                    }
+                    
+                    let showingCollectionViewRect: CGFloat = strongSelf.collectionView.bounds.height - contentInset.top - contentInset.bottom
+                    if finalHeight < showingCollectionViewRect && strongSelf.collectionView.contentOffset.y > -contentInset.top { // ContentSize.height가 CollectionView.size.height 보다 작은 경우 자연스러운 scroll을 위함
+                        strongSelf.collectionView.setContentOffset(CGPoint(x: 0, y: -contentInset.top), animated: true)
+                    }
                     strongSelf.collectionView.performBatchUpdates({
                         strongSelf.collectionView.deleteItems(at: indexPaths)
                     }, completion: nil)
@@ -90,10 +119,6 @@ extension ViewController: UICollectionViewDataSource {
         }
         return UICollectionReusableView()
     }
-}
-
-extension ViewController: UICollectionViewDelegate {
-    
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
