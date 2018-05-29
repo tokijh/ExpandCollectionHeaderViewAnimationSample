@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ExpandTableHeaderViewAnimationTest
+//  ExpandCollectionHeaderViewAnimationSample
 //
 //  Created by 윤중현 on 2018. 5. 27..
 //  Copyright © 2018년 윤중현. All rights reserved.
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         self.collectionView.register(CategoryHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.Identifier)
         self.collectionView.register(CategoryFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: CategoryFooterView.Identifier)
         
-        self.collectionView.contentInset = UIEdgeInsets(top: 200, left: 0, bottom: 0, right: 0)
+        self.collectionView.contentInset = UIEdgeInsets(top: 200, left: 0, bottom: 20, right: 0)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.alwaysBounceVertical = true

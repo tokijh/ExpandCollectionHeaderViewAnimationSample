@@ -1,6 +1,6 @@
 //
 //  CategoryService.swift
-//  ExpandTableHeaderViewAnimationTest
+//  ExpandCollectionHeaderViewAnimationSample
 //
 //  Created by 윤중현 on 2018. 5. 28..
 //  Copyright © 2018년 윤중현. All rights reserved.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6196BFFF4E0101CFC41C81 /* Pods_ExpandCollectionHeaderViewAnimationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115E903E3542D8CBF3D700BF /* Pods_ExpandCollectionHeaderViewAnimationSample.framework */; };
 		60D31ED420BAF60E00DD9E2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D31ED320BAF60E00DD9E2D /* AppDelegate.swift */; };
 		60D31ED620BAF60E00DD9E2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D31ED520BAF60E00DD9E2D /* ViewController.swift */; };
 		60D31ED920BAF60E00DD9E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D31ED720BAF60E00DD9E2D /* Main.storyboard */; };
@@ -18,13 +19,13 @@
 		60D31EEF20BB07D800DD9E2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D31EEE20BB07D800DD9E2D /* Category.swift */; };
 		60D31EF220BB081100DD9E2D /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D31EF120BB081100DD9E2D /* CategoryService.swift */; };
 		60D31EF420BB0DD300DD9E2D /* CategoryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D31EF320BB0DD300DD9E2D /* CategoryFooterView.swift */; };
-		F43F8BE9A683BA7E56DC9451 /* Pods_ExpandTableHeaderViewAnimationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18C7312558A2D405070CF98 /* Pods_ExpandTableHeaderViewAnimationTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115E903E3542D8CBF3D700BF /* Pods_ExpandCollectionHeaderViewAnimationSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpandCollectionHeaderViewAnimationSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2306EBE4B45BB2CF58D40331 /* Pods-ExpandTableHeaderViewAnimationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandTableHeaderViewAnimationTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandTableHeaderViewAnimationTest/Pods-ExpandTableHeaderViewAnimationTest.release.xcconfig"; sourceTree = "<group>"; };
 		484DBCF780089EBCB5D8A8A5 /* Pods-ExpandTableHeaderViewAnimationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandTableHeaderViewAnimationTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandTableHeaderViewAnimationTest/Pods-ExpandTableHeaderViewAnimationTest.debug.xcconfig"; sourceTree = "<group>"; };
-		60D31ED020BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandTableHeaderViewAnimationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60D31ED020BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandCollectionHeaderViewAnimationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D31ED320BAF60E00DD9E2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60D31ED520BAF60E00DD9E2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60D31ED820BAF60E00DD9E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,7 +38,8 @@
 		60D31EEE20BB07D800DD9E2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		60D31EF120BB081100DD9E2D /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		60D31EF320BB0DD300DD9E2D /* CategoryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFooterView.swift; sourceTree = "<group>"; };
-		A18C7312558A2D405070CF98 /* Pods_ExpandTableHeaderViewAnimationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpandTableHeaderViewAnimationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		678C1E531F8C43A2CB5E0F77 /* Pods-ExpandCollectionHeaderViewAnimationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandCollectionHeaderViewAnimationSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandCollectionHeaderViewAnimationSample/Pods-ExpandCollectionHeaderViewAnimationSample.debug.xcconfig"; sourceTree = "<group>"; };
+		DDC65360E2AD520D4ED2BEBA /* Pods-ExpandCollectionHeaderViewAnimationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpandCollectionHeaderViewAnimationSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExpandCollectionHeaderViewAnimationSample/Pods-ExpandCollectionHeaderViewAnimationSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43F8BE9A683BA7E56DC9451 /* Pods_ExpandTableHeaderViewAnimationTest.framework in Frameworks */,
+				0B6196BFFF4E0101CFC41C81 /* Pods_ExpandCollectionHeaderViewAnimationSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +57,7 @@
 		60D31EC720BAF60E00DD9E2D = {
 			isa = PBXGroup;
 			children = (
-				60D31ED220BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest */,
+				60D31ED220BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample */,
 				60D31ED120BAF60E00DD9E2D /* Products */,
 				947633B38ED44DAC8BD4DF16 /* Pods */,
 				E26C7135C6AEB23603A4BB53 /* Frameworks */,
@@ -65,12 +67,12 @@
 		60D31ED120BAF60E00DD9E2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				60D31ED020BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest.app */,
+				60D31ED020BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		60D31ED220BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest */ = {
+		60D31ED220BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample */ = {
 			isa = PBXGroup;
 			children = (
 				60D31ED320BAF60E00DD9E2D /* AppDelegate.swift */,
@@ -83,7 +85,7 @@
 				60D31EDC20BAF60F00DD9E2D /* LaunchScreen.storyboard */,
 				60D31EDF20BAF60F00DD9E2D /* Info.plist */,
 			);
-			path = ExpandTableHeaderViewAnimationTest;
+			path = ExpandCollectionHeaderViewAnimationSample;
 			sourceTree = "<group>";
 		};
 		60D31EE520BAF62A00DD9E2D /* Cell */ = {
@@ -118,6 +120,8 @@
 			children = (
 				484DBCF780089EBCB5D8A8A5 /* Pods-ExpandTableHeaderViewAnimationTest.debug.xcconfig */,
 				2306EBE4B45BB2CF58D40331 /* Pods-ExpandTableHeaderViewAnimationTest.release.xcconfig */,
+				678C1E531F8C43A2CB5E0F77 /* Pods-ExpandCollectionHeaderViewAnimationSample.debug.xcconfig */,
+				DDC65360E2AD520D4ED2BEBA /* Pods-ExpandCollectionHeaderViewAnimationSample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -125,7 +129,7 @@
 		E26C7135C6AEB23603A4BB53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A18C7312558A2D405070CF98 /* Pods_ExpandTableHeaderViewAnimationTest.framework */,
+				115E903E3542D8CBF3D700BF /* Pods_ExpandCollectionHeaderViewAnimationSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		60D31ECF20BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest */ = {
+		60D31ECF20BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60D31EE220BAF60F00DD9E2D /* Build configuration list for PBXNativeTarget "ExpandTableHeaderViewAnimationTest" */;
+			buildConfigurationList = 60D31EE220BAF60F00DD9E2D /* Build configuration list for PBXNativeTarget "ExpandCollectionHeaderViewAnimationSample" */;
 			buildPhases = (
 				99842136B23ADAC006B8ADD2 /* [CP] Check Pods Manifest.lock */,
 				60D31ECC20BAF60E00DD9E2D /* Sources */,
@@ -147,9 +151,9 @@
 			);
 			dependencies = (
 			);
-			name = ExpandTableHeaderViewAnimationTest;
+			name = ExpandCollectionHeaderViewAnimationSample;
 			productName = ExpandTableHeaderViewAnimationTest;
-			productReference = 60D31ED020BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest.app */;
+			productReference = 60D31ED020BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 60D31ECB20BAF60E00DD9E2D /* Build configuration list for PBXProject "ExpandTableHeaderViewAnimationTest" */;
+			buildConfigurationList = 60D31ECB20BAF60E00DD9E2D /* Build configuration list for PBXProject "ExpandCollectionHeaderViewAnimationSample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -180,7 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				60D31ECF20BAF60E00DD9E2D /* ExpandTableHeaderViewAnimationTest */,
+				60D31ECF20BAF60E00DD9E2D /* ExpandCollectionHeaderViewAnimationSample */,
 			);
 		};
 /* End PBXProject section */
@@ -210,7 +214,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ExpandTableHeaderViewAnimationTest-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ExpandCollectionHeaderViewAnimationSample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -223,7 +227,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ExpandTableHeaderViewAnimationTest/Pods-ExpandTableHeaderViewAnimationTest-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExpandCollectionHeaderViewAnimationSample/Pods-ExpandCollectionHeaderViewAnimationSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -232,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExpandTableHeaderViewAnimationTest/Pods-ExpandTableHeaderViewAnimationTest-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExpandCollectionHeaderViewAnimationSample/Pods-ExpandCollectionHeaderViewAnimationSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -391,17 +395,17 @@
 		};
 		60D31EE320BAF60F00DD9E2D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 484DBCF780089EBCB5D8A8A5 /* Pods-ExpandTableHeaderViewAnimationTest.debug.xcconfig */;
+			baseConfigurationReference = 678C1E531F8C43A2CB5E0F77 /* Pods-ExpandCollectionHeaderViewAnimationSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46KGHHF73Q;
-				INFOPLIST_FILE = ExpandTableHeaderViewAnimationTest/Info.plist;
+				INFOPLIST_FILE = ExpandCollectionHeaderViewAnimationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tokijh.com.ExpandTableHeaderViewAnimationTest;
+				PRODUCT_BUNDLE_IDENTIFIER = tokijh.com.ExpandCollectionHeaderViewAnimationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,17 +414,17 @@
 		};
 		60D31EE420BAF60F00DD9E2D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2306EBE4B45BB2CF58D40331 /* Pods-ExpandTableHeaderViewAnimationTest.release.xcconfig */;
+			baseConfigurationReference = DDC65360E2AD520D4ED2BEBA /* Pods-ExpandCollectionHeaderViewAnimationSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46KGHHF73Q;
-				INFOPLIST_FILE = ExpandTableHeaderViewAnimationTest/Info.plist;
+				INFOPLIST_FILE = ExpandCollectionHeaderViewAnimationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tokijh.com.ExpandTableHeaderViewAnimationTest;
+				PRODUCT_BUNDLE_IDENTIFIER = tokijh.com.ExpandCollectionHeaderViewAnimationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -430,7 +434,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		60D31ECB20BAF60E00DD9E2D /* Build configuration list for PBXProject "ExpandTableHeaderViewAnimationTest" */ = {
+		60D31ECB20BAF60E00DD9E2D /* Build configuration list for PBXProject "ExpandCollectionHeaderViewAnimationSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60D31EE020BAF60F00DD9E2D /* Debug */,
@@ -439,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		60D31EE220BAF60F00DD9E2D /* Build configuration list for PBXNativeTarget "ExpandTableHeaderViewAnimationTest" */ = {
+		60D31EE220BAF60F00DD9E2D /* Build configuration list for PBXNativeTarget "ExpandCollectionHeaderViewAnimationSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60D31EE320BAF60F00DD9E2D /* Debug */,
